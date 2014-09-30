@@ -1,0 +1,138 @@
+/* icon */
+@font-face {
+	font-family: 'icomoon';
+	src:url('../font/icomoon.eot?-20wlj8');
+	src:url('../font/icomoon.eot?#iefix-20wlj8') format('embedded-opentype'),
+		url('../font/icomoon.woff?-20wlj8') format('woff'),
+		url('../font/icomoon.ttf?-20wlj8') format('truetype'),
+		url('../font/icomoon.svg?-20wlj8#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: normal;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-visual:before {
+	content: "\e600";
+}
+.icon-motion:before {
+	content: "\e601";
+}
+.icon-audio_:before {
+	content: "\e602";
+}
+.icon-search:before {
+	content: "\e604";
+}
+.icon-cross:before {
+	content: "\e603";
+}
+
+/* reset */
+html, body, address, blockquote, del, div, h1, h2, h3, h4, h5, h6, hr, ins, noscript, p, pre, dl, dt, dd, li, ol, ul, table, caption, colgroup, col, thead, tfoot, tbody, tr, td, th, form, button, fieldset, legend, label, select, optgroup, option, textarea, a, bdo, br, img, map, area, object, param, q, script, span, sub, sup, abbr, acronym, cite, code, del, dfn, em, ins, kbd, samp, strong, var, b, big, i, small, tt{border:0;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0;outline:0;padding:0;vertical-align:baseline;}
+ol, ul{list-style:none;}
+th{text-align:left;}
+table{border-collapse:collapse;}
+
+/* global */
+body 						{font-family: 'Open Sans', sans-serif;background:#333;}
+a:link,	
+a:visited					{text-decoration: none;}
+a:hover,
+a:visited:hover				{text-decoration: none;}
+
+table td					{}
+
+h1							{font-size:2em;margin:40px 0 0 0; text-align: center;	margin:30px 0px; color:#D184FF; }
+h2  					    {}
+h3							{border-radius: 3px 3px 0 0; background-color:#D184FF; color:white; }
+h4							{}
+h5							{}
+h6							{}
+
+p							{}
+span						{}
+hr							{}
+label						{}
+input[type=text]			{}
+input[type=text]:focus		{}
+input[type=submit]			{}
+textarea					{}
+
+::selection                 {}
+::-moz-selection 			{}
+
+/* detail.html */
+/* container */
+#main						{margin:10px auto; width:1200px;}
+
+/* header */
+#header                     {}
+
+/* sidebar */
+#sidebar					{margin-left:100px;width:220px; height:650px; position: relative; float:left; border:1px solid #B845FF; border-radius: 5px; text-align: center; overflow: auto; margin-top:103px; background-color: #111; }
+#sidebar img 				{position: relative; width: 200px; }
+#sidebar ul 				{margin-top:7px; }
+#sidebar li 				{margin:0; }
+
+/* main content */
+#content 					{width:800px; height:650px; position: relative; display: inline-block; text-align: center; }
+/* video player */
+#detail_video				{margin:10px auto; } 
+
+/* modal navigation */
+#modals_nav					{width:600px; height:300px; border:1px solid #B845FF; border-radius: 5px; margin:0 auto; margin-top:50px; }
+
+/* detail analysis */
+#result 					{background:#111; padding:15px 0; }
+#modality 					{display: none;float:left; margin-top:-144px; margin-left:50px; color:white; font-size:27px; }
+#modality li 				{list-style:none; padding-bottom:5px; }
+
+/* query element */
+#query 						{padding-left:20px; position: relative; width:580px; height:84px; border-radius: 0 0 3px 3px; background-color:#D184FF; overflow:auto; }
+#query ul li 				{float:left; font-size:0.8em; margin-right:5px; }
+.q_elmt 					{padding:7px 5px; border-radius: 5px; margin:24px 10px; vertical-align: baseline; }
+.q_elmt .q_icon 			{color:white; font-size:20px; margin-top:1px; }
+.q_elmt span 				{float:left; } 
+.q_time 					{padding-top: 2px; padding-left: 5px; padding-right: 5px; color:white; }
+.q_elmt .icon-cross 		{float: right; margin-top: 5px; color: rgba(255,255,255,0.3); }
+.q_elmt .icon-cross:hover 	{color: rgba(255,255,255,1); } 
+
+/* search button */
+button 						{cursor:pointer;float:right; display: none; border-bottom: 3px solid #333; border-right: 3px solid #333; overflow: auto; background-color: transparent; padding: 5px 10px; margin-top: 25px; margin-right: 30px; color: black; border-radius:5px; background: white; }
+
+/* index.html */
+#select						{width:720px; height:400px; margin:50px auto; margin-bottom:50px; border:1px solid #B845FF; border-radius: 5px; background:#111; }
+.cover						{width:200px; height:100px; margin-top:-155px; color:white; background:rgba(255,0,99,.7); text-align: center; font-size:30px; position: relative; padding-top:50px; cursor: pointer; }
+
+/* responsive design css rules */
+@media screen and (max-width:480px) {
+body 						{}
+}
+
+@media screen and (min-width:480px) and (max-width:800px) {
+body                        {}
+}
+
+@media screen and (min-width:800px) and (max-width:1024px) {
+body                        {}
+}
+
+
+/* misc */
+
+strong					    {font-weight:bold;}
+em                          {font-style:italic;}
+.cb                         {clear:both;}          

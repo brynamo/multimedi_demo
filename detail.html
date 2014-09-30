@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="description">
+	<meta name="keywords" content="keywords">
+	<title>Multimodal Video Search</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>	
+	<link rel="stylesheet" type="text/css" href="_css/style.css" />
+	<link rel="stylesheet" type="text/css" href="_css/video.css" />
+	<title></title>
+
+<style>
+.vjs-default-skin .vjs-big-play-button	{top:6em; }
+
+</style>
+</head>
+<body>
+	<div id="main">
+  		<div id="sidebar">
+  			<h3>Releated Videos</h3>
+  			<ul>
+  			</ul>
+  		</div>		
+  		<div id="content">
+ 			<a href="index.html"><h1>Multimodal Video Search</h1></a>
+  	  		<div id="video">
+				<video id="detail_video"class="video-js vjs-default-skin" data-setup='{"controls":true,"width":"600px","height":"300px","preload":"auto"}'>
+					<source src="" type="video/mp4"/>
+				</video>
+
+	  		</div>
+	  		<div id="keyframe"></div>
+	  		<div id="modals_nav">
+	  			<h3>Multimodal Analysis</h3>
+	  			<div id="result"></div>
+	  			<div id="modality">
+                    <ul>
+		  			<li><span class="icon-visual"></span></li>
+					<li><span class="icon-audio_"></span></li>
+		  			<li><span class="icon-motion"></span></li>
+                    </ul>
+		  		</div>
+		  		<div id="query"><ul></ul>
+		  			<button>Search</button>
+				</div>
+ 	  		</div>
+ 		</div>
+	</div>	
+</body>
+	<script type="text/javascript" src="_js/jquery-1.10.2.min.js"></script>
+    <script src="_js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="_js/script.js"></script>	
+    <script src="_js/video.js"></script>
+    <script src="_js/d3.v3.min.js"></script>
+</html>
