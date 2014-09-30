@@ -60,39 +60,16 @@ $('#select li').mouseenter(function() {
 
 //button event
 $('button').on('click',function(){
-//    var counter = 0;
-
-    // start numbering of image set (2,3,4,5) | (6,7,8,9)
-//    var start_cnt = $('#sidebar li').eq(0).children('img').attr('src').slice(-5,-4);
-//    var new_start_cnt =0;
-
-//    if (start_cnt ==2){
-//        new_start_cnt =6;
-//    }else{
-//        new_start_cnt =2;
-//    }
-//    $('#sidebar ul').html('');
-
-//   var interval = setInterval(function() {
-//       $('#sidebar ul').append('<li><img src="_img/'+evnt_name+'/'+parseInt(parseInt(new_start_cnt) + parseInt(counter))+'.png"/></li>').fadeIn(50);
-//       counter++;
-//       if(counter == 4){
-//           counter = 0;
-//           clearInterval(interval);
-//       }
-//   }, 100);
 
 
-    var str = query_array.join(', ');   // URL encoded spaces separating array entries
+    var str = query_array.join(' \n');   // URL encoded spaces separating array entries
     var params = "array=" + str;
     var http = new XMLHttpRequest();
-    http.open("POST", "write.php", true);
+    http.open("POST", "_php/write.php", true);
 
 //Send the proper header information along with the request
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     console.log(params.length);
-    //http.setRequestHeader("Content-length", params.length);
-    //http.setRequestHeader("Connection", "close");
 
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
@@ -100,11 +77,8 @@ $('button').on('click',function(){
     }
     http.send(params);
 
-    $.ajax({ url: 'clear.php' });
-//    $('button').hide();
-//    $('#result').html('');
+    $.ajax({ url: '_php/clear.php' });
     setTimeout(function(){location.reload()}, 3000);
-//    draw_viz();
     $('#query ul').html('');
     $('#sidebar ul').html('');
     query_cnt=0;
@@ -114,7 +88,7 @@ function addElement(ui, type, bgcolor, precolor){
 	// console.log(ui, type, bgcolor, precolor);
 
     $("button").show();
-	$('#query ul').append('<li class="q_elmt" style="background-color:'+bgcolor+'"><span class="q_icon icon-'+type+'"></span><span id="'+precolor+'" class="q_time">'+ui.substring(7)+'</span><span id="'+ui+'" class="icon-cross"></span> <script> $("li #'+ui+'").on("click",function(){$(this).parent().remove(); if($("#query ul li").length == 0){$("button").hide();query_cnt=0;}else{query_cnt -= 1; } var pre_id = "#"+$(this).attr("id"); var pre_color = $(this).parent().children("span:nth-child(2)").attr("id"); $(pre_id).css("fill",pre_color);})</script></li>');
+	$('#query ul').append('<li class="q_elmt" style="background-color:'+bgcolor+'"><span class="q_icon icon-'+type+'"></span><span id="'+precolor+'" class="q_time">'+ui.substring(20)+'</span><span id="'+ui+'" class="icon-cross"></span> <script> $("li #'+ui+'").on("click",function(){$(this).parent().remove(); if($("#query ul li").length == 0){$("button").hide();query_cnt=0;}else{query_cnt -= 1; } var pre_id = "#"+$(this).attr("id"); var pre_color = $(this).parent().children("span:nth-child(2)").attr("id"); $(pre_id).css("fill",pre_color);})</script></li>');
 }
 
 function draw_viz(){
@@ -193,8 +167,8 @@ function draw_viz(){
             var text = g.selectAll("text")
                 // .data(data[j]['Time'])
                 .data(dataset[j])
-                .enter()
-                .append("text");
+                .enter();
+                //.append("text");
 
             rects   
                 .attr("id", function(d,i){
@@ -208,7 +182,9 @@ function draw_viz(){
 					else if(i==2){
 						type = 'motion';
 					}
-                	return type+'-'+j;
+                    console.log(evnt_name);
+
+                	return evnt_name.substring(0, (evnt_name.length-1))+' '+type+' seg'+j;
                 }) 
                 .attr("x", function(d) {return 55+xScale(j*100+1); })
                 .attr("y", function(d,i) { return i*40+10; })
