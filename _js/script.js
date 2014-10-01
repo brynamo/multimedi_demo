@@ -34,18 +34,18 @@ $(function(){
     $('#sidebar li').click(function(){
         var urlstr = $(this).children().children('img').attr('src');
         var start = urlstr.indexOf("/");
-        var event_name =urlstr.slice(start+1,urlstr.lastIndexOf('.png'));
+        var event_name = urlstr.slice(start+1,urlstr.lastIndexOf('.png'));
         localStorage.setItem("event", event_name);
     });
     console.log(localStorage['event']);
 });
 
 
-// Save the event name of the image to localstorage
+// Save the event name of the image on index to localstorage
 $('#select li').click(function(){
     var urlstr = $(this).children().children('img').attr('src');
     var start = urlstr.indexOf("/");
-    var event_name =urlstr.slice(start+1,urlstr.lastIndexOf('.png')-2);
+    var event_name =urlstr.slice(start+1,urlstr.lastIndexOf('.png'));
     localStorage.setItem("event", event_name);
 });
 
@@ -174,15 +174,14 @@ function draw_viz(){
                 .attr("id", function(d,i){
                 	var type ='';
 					if(i==0){
-						type = 'visual';
+						type = 'nn';
 					}
 					else if(i==1){
-						type = 'audio_';
+						type = 'mfcc';
 					}
 					else if(i==2){
-						type = 'motion';
+						type = 'gist';
 					}
-                    console.log(evnt_name);
 
                 	return evnt_name.substring(0, (evnt_name.length-1))+' '+type+' seg'+j;
                 }) 
