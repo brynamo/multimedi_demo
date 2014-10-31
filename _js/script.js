@@ -6,7 +6,7 @@ var vidlist = '';
 function vid_list_get() {
     var xhr = new XMLHttpRequest();
 
-    xhr.open('GET', '_data/video.log', false);
+    xhr.open('GET', '_data/video.txt', false);
     xhr.send(null);
 
     vidlist = xhr.responseText.split('\n');
